@@ -1,20 +1,22 @@
 // 30th july
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-void vote(int);
-int main(){
+int main() {
     int age;
-    cout <<"Enter your age:";
-    cin >> age;
-    vote(age);
-    return 0;
- 
- }
-void vote (int age){
-    if (age < 18)
-    cout<<"You are not eligible to vote."<<endl;
-    else
-    cout<<"You are eligible to vote."<<endl;
+    char nationality;
 
+    cout << "Enter your age: ";
+    cin >> age;
+
+    cout << "Are you an Indian citizen? (Y/N): ";
+    cin >> nationality;
+
+    if (age >= 18 && (nationality == 'Y' || nationality == 'y')) {
+        cout << "You are eligible to vote." << endl;
+    } else {
+        cout << "You are not eligible to vote." << endl;
+    }
+
+    return 0;
 }
