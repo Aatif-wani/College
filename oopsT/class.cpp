@@ -7,18 +7,22 @@ class Book{
     string title;
     string author;
     int price;
+    static int book;
 
         //Parameterized constructor
         Book (string t,string a,int p){
         title = t ;
         author = a ;
         price = p ;
+        book++;
         }
         Book (string t){
             title = t;
+            book++;
         }
         Book (int p){
             price = p;
+            book++;
         }
         
         //Copy Constructor
@@ -27,9 +31,12 @@ class Book{
             title = oldBook.title;
             author = oldBook.author;
             price = oldBook.price;
+                book++;
+
             }
             //Default constructor
             Book(){
+                book++;
 
             }
         
@@ -41,6 +48,8 @@ class Book{
         cout << "price: " << price << endl<<endl;
             }
         };
+     int Book :: book = 0;
+
         
 int main(){
     Book b1("Thusand","Me",500);
@@ -48,6 +57,7 @@ int main(){
     Book b3("rrrrrr");
     Book b4;
      Book b5(40);
+     cout<<"Total books:"<<Book::book<<endl;
 
       b2.display();
     b1.display();
@@ -59,3 +69,4 @@ int main(){
     
     
   }
+  
